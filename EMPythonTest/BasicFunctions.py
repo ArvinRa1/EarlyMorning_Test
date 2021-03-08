@@ -1,26 +1,29 @@
 # Task 1
 def average(a, b):
-    a + b / 2
+    return (a + b) / 2
 
 
 # Task 2
 def reverse_list(input_list):
-    return None
+    return [ele for ele in reversed(input_list)]
 
 
 # Task 3
 def sort_numbers_descending(number_list):
-    return None
+    return sorted(number_list, reverse=True)
 
 
 # Task 4
 def add_indices(string_list):
-    return None
+    return [str(string_list.index(i) + 1) + '. ' + str(i) for i in string_list]
 
 
 # Task 5
 def capitalize_last_letter_in_each_word(string):
-    return None
+    s = str()
+    for word in string.split():
+        s += word[:-1] + word[-1].upper() + ' '
+    return s[:-1]
 
 
 # Task 6
@@ -31,7 +34,10 @@ def element_wise_merge(list1, list2):
     :param list2: list of strings of the same length as list1
     :return: new list of merged strings
     """
-    return None
+    result = []
+    for (ele1, ele2) in zip(list1, list2):
+        result.append(ele1 + ' ' + ele2)
+    return result
 
 
 # Task 7
@@ -43,4 +49,8 @@ def execute_safely(operator, a, b):
     :param b: a real number
     :return: operator evaluated on (a,b) -- or -1 if this operation would be illegal
     """
-    return operator(a, b)
+    try:
+        _ = operator(a, b)
+    except:
+        _ = -1
+    return _
