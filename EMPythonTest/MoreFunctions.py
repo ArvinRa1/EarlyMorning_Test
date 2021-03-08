@@ -10,6 +10,8 @@ def calculate_cost(duration_in_seconds):
 
 # Task 12
 def print_from_stream(n, stream=EvenStream()):
+    if stream is None:
+        stream = EvenStream()
     output = []
     for _ in range(n):
         output.append(stream.get_next())
