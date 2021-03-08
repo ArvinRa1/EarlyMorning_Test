@@ -4,7 +4,7 @@ from Utils import EvenStream
 # Task 11
 def calculate_cost(duration_in_seconds):
     minute_rate = 1.45
-    cost = minute_rate * duration_in_seconds / 60
+    cost = duration_in_seconds * (minute_rate / 60)
     return cost
 
 
